@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comité Agua Potable-Lecturas</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Registrar Lectura</h1>
+
+      <!-- Botón para abrir Excel -->
+      <div class="row">
+        <div class="field full">
+          <button id="btn-abrir-excel" type="button">Abrir Excel</button>
+        </div>
+      </div>
+
+      <!-- Año y Mes -->
+      <div class="row">
+        <div class="field">
+          <label for="anio">Año</label>
+          <input
+            id="anio"
+            name="anio"
+            list="lista-anios"
+            placeholder="Ej: 2025"
+          />
+          <datalist id="lista-anios">
+            <option value="2024"></option>
+            <option value="2025"></option>
+            <option value="2026"></option>
+            <option value="2027"></option>
+          </datalist>
+        </div>
+        <div class="field">
+          <label for="mes">Mes</label>
+          <select id="mes" name="mes">
+            <option value="Enero">Enero</option>
+            <option value="Febrero">Febrero</option>
+            <option value="Marzo">Marzo</option>
+            <option value="Abril">Abril</option>
+            <option value="Mayo">Mayo</option>
+            <option value="Junio">Junio</option>
+            <option value="Julio">Julio</option>
+            <option value="Agosto">Agosto</option>
+            <option value="Septiembre">Septiembre</option>
+            <option value="Octubre">Octubre</option>
+            <option value="Noviembre">Noviembre</option>
+            <option value="Diciembre">Diciembre</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Código y botón QR -->
+      <div class="row">
+        <div class="field">
+          <label for="codigo">Código</label>
+          <input type="text" id="codigo" name="codigo" placeholder="123ABC" />
+        </div>
+        <div class="field">
+          <label>&nbsp;</label>
+          <button id="btn-qr" type="button">Escanear QR</button>
+          <div id="reader" style="width: 100%; margin-top: 10px"></div>
+        </div>
+      </div>
+
+      <!-- Nombre y Apellidos -->
+      <div class="row">
+        <div class="field full">
+          <label for="nombre">Nombre y Apellidos</label>
+          <input type="text" id="nombre" name="nombre" />
+        </div>
+      </div>
+
+      <!-- Dirección -->
+      <div class="row">
+        <div class="field full">
+          <label for="direccion">Dirección</label>
+          <input type="text" id="direccion" name="direccion" />
+        </div>
+      </div>
+
+      <!-- Lectura Anterior y Lectura Actual -->
+      <div class="row">
+        <div class="field">
+          <label for="lectura-anterior">Lectura Anterior</label>
+          <input type="number" id="lectura-anterior" name="lectura-anterior" />
+        </div>
+        <div class="field">
+          <label for="lectura-actual">Lectura Actual</label>
+          <input type="number" id="lectura-actual" name="lectura-actual" />
+        </div>
+      </div>
+
+      <!-- Botón Imprimir -->
+      <div class="row">
+        <div class="field">
+          <button id="btn-imprimir" type="button">Imprimir</button>
+        </div>
+      </div>
+
+      <!-- Contenedor oculto para generar imagen del aviso -->
+      <div id="aviso-preview" style="display: none; width: 300px"></div>
+    </main>
+  </body>
+</html>
