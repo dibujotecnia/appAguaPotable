@@ -3,7 +3,7 @@
 // ===============================
 
 // Enlace compartido de OneDrive con permisos de edición
-const ENLACE_ONEDRIVE = "https://1drv.ms/x/c/3d7f55dc3c1f5283/EZ_UpfkgaHhFukgiZbatzlkBM2ASs5C8ziQU6NFJ9q3Hug?e=VdU5VE";
+const ENLACE_ONEDRIVE = "https://1drv.ms/x/c/3d7f55dc3c1f5283/EZ_UpfkgaHhFukgiZbatzlkBeKYVKpFAqXXHFmyRZqVmNA?e=Os17xb";
 
 // Inputs del formulario
 const inputCodigo = document.getElementById('codigo');
@@ -179,3 +179,4 @@ btnImprimir.addEventListener('click', async () => {
     console.error("Error al actualizar XLSM en OneDrive", err);
   }
 });
+
